@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block title %}View Tickets{% endblock %} {% block
+content%}
+<h1 align="center">Purchased Tickets</h1>
+<ul class="list-group list-group-flush" id="tickets">
+  {% for ticket in user.tickets %}
+  <li class="list-group-item">
+    Ticket No: {{ ticket.id }}, Seat No: {{ ticket.seat_id }}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

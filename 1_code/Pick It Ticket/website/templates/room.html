@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Get Tickets{% endblock %} {% block
+content%}
+<h1 align="center">{{ room.name }}</h1>
+<h2 align="center">Showing {{ room.show }}</h2>
+<h6 align="center">Room Number {{ room.id }}</h6>
+<h6 align="center">Seat Cost: {{ room.cost }}</h6>
+<ul id="seats" style="float: left">
+  {% for seat in seats %}
+  <a href="{{ url_for('views.seat', id = room.id, id2 = seat.id)}}"
+    ><li>Seat No: {{ seat.number }}</li></a
+  >
+  <br />
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block title %}Get Tickets{% endblock %} {% block
+content%}
+<h1 align="center">Choose a Room</h1>
+<ul class="list-group list-group-flush" id="rooms">
+  {% for room in rooms %}
+  <a href="{{ url_for('views.room', id = room.id)}}"
+    ><li class="list-group-item">
+      {{ room.name }} <br />
+      Capacity: {{ room.capacity }} <br />
+      Showing: {{ room.show }} <br />
+      Date: {{ room.month }}/{{ room.day }}/2023 <br />
+      Seating Mode: {{ room.mode }}
+    </li></a
+  >
+  {% endfor %}
+</ul>
+{% endblock %}

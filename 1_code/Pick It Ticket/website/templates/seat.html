@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block title %}Get Tickets{% endblock %} {% block
+content%}
+<h1 align="center">{{ room.name }}</h1>
+<h2 align="center">Showing {{ room.show }}</h2>
+<h6 align="center">Room Number {{ room.id }}</h6>
+<ul id="seats" style="float: left">
+  <h1>Seat No: {{ seat.number }}</h1>
+  <h2>Available: {{ not seat.occupied }}</h2>
+  <h2>Cost: {{ room.cost }} </h2>
+  <a
+    href="{{ url_for('views.checkout', id = room.id, id2 = seat.id)}}"
+  >
+    Reserve
+  </button>
+</ul>
+{% endblock %}
